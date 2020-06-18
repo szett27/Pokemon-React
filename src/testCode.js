@@ -15,6 +15,7 @@ class Pokemon extends Component{
                 <img src={`/public/sprites/${id}.png`} />
               </div>
               <div className="pokemon--species--name"> {pokemon.name} </div>
+              <input type="checkbox" id="addToCollection" checked="false">Add To Collection</input>
             </div>
           </div>;
     }

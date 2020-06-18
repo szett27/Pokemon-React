@@ -1,6 +1,8 @@
 body {
   text-align: center;
   background-image: url(https://i.pinimg.com/originals/ab/58/cc/ab58cc75dcb2e42555cf7e614216350a.jpg);
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
 h1 {
@@ -8,8 +10,11 @@ h1 {
 }
 
 .PokeCard{
-  background-color: yellow;
-  margin-left: 610px;
+  background-color: gold;
+  display: inline-block;
+  margin: 10px;
+  /*margin-left: 610px; */
+  text-align: center;
   width: 200px;
   border-style: solid;
   border-width: 2px;
@@ -28,5 +33,7 @@ img{
   border-style: solid;
   border-width:1px;
 }
+
+
 
 
