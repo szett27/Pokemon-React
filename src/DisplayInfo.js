@@ -4,16 +4,22 @@ import './App.css';
 class DisplayInfo extends React.Component{
        constructor(props){
               super(props)
+              this.state ={
+              }
        }
 
+
+
+
+       
+
        render(){
-       console.log("Name", this.props.name)
-       console.log("Image", this.props.img)
        return (
         <div className = "PokeCard">
                <div className = "PokeCardName">{this.props.name}</div>
-              <img src={this.props.img} />
+              <img src={this.props.img} alt = {this.props.name} />
               <div>{this.props.type}</div>
+              <button id="collection" onClick={this.props.onSubmit}>Add to Collection</button>
         
         </div>
        )

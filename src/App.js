@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import PokeForm from './PokeForm';
 import DisplayInfo from './DisplayInfo'
-// import DisplayAll from './DisplayAll'
-import PokemonList from './PokemonList'
+import DisplayAll from './DisplayAll'
 
 
 
@@ -15,11 +14,23 @@ class App extends React.Component {
     viewAllVis: false,
     displayVis: false,
     collectionVis: false,
+    collection: [],
    
   }
   }
 
  
+  addToCollection(){
+    console.log("State: ", this.state)
+    if(this.state.collection.indexOf(this.props.name)===-1){
+           this.setState({
+                  collection: [].push(this.props.name)
+           })
+           console.log("Collection: ", this.state.collection)
+    } else{
+           alert("Already in Collection!!!")
+    }
+  }
 
 
    
@@ -72,9 +83,9 @@ class App extends React.Component {
       
       <button className ="Reset" onClick={()=>this.setState({ viewAllVis: false, displayVis: false,collectionVis: false})}>Reset All</button>
 
-      {this.state.displayVis ? <DisplayInfo name ={this.state.pokeName} type={this.state.pokeType} img={this.state.pokeImage} /> : null}
+      {this.state.displayVis ? <DisplayInfo name ={this.state.pokeName} type={this.state.pokeType} img={this.state.pokeImage} onSubmit={this.addToCollection.bind(this)} /> : null}
       
-      {this.state.viewAllVis ? <PokemonList /> : null}
+      {this.state.viewAllVis ? <DisplayAll /> : null}
     </div>
     )
   }
